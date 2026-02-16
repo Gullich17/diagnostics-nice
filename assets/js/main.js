@@ -121,7 +121,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  /* ---- 5. Scroll Fade-in Animation (IntersectionObserver) ---- */
+  /* ---- 5. Pre-fill devis form from query params (hero form redirect) ---- */
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('projet')) {
+    var sel = document.getElementById('type-projet');
+    if (sel) sel.value = params.get('projet');
+  }
+  if (params.get('bien')) {
+    var sel2 = document.getElementById('type-bien');
+    if (sel2) sel2.value = params.get('bien');
+  }
+
+  /* ---- 6. Scroll Fade-in Animation (IntersectionObserver) ---- */
   if ('IntersectionObserver' in window) {
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
