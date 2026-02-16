@@ -197,4 +197,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  /* ---- 8. Scroll Progress Bar ---- */
+  var scrollProgress = document.getElementById('scrollProgress');
+  if (scrollProgress) {
+    window.addEventListener('scroll', function () {
+      var scrollTop = window.scrollY;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight > 0) {
+        scrollProgress.style.width = (scrollTop / docHeight * 100) + '%';
+      }
+    }, { passive: true });
+  }
+
 });
