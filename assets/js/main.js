@@ -159,4 +159,42 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* ---- 7. Conversion Tracking (GA4) ---- */
+  // Track form submissions
+  document.querySelectorAll('form[action*="formspree"], form[action*="getform"]').forEach(function(form) {
+    form.addEventListener('submit', function() {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'generate_lead', {
+          'event_category': 'formulaire',
+          'event_label': 'devis_diagnostic',
+          'value': 1
+        });
+      }
+    });
+  });
+
+  // Track phone clicks
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'click_phone', {
+          'event_category': 'contact',
+          'event_label': 'appel_telephone'
+        });
+      }
+    });
+  });
+
+  // Track CTA button clicks to devis page
+  document.querySelectorAll('a[href*="devis-gratuit"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'click_cta_devis', {
+          'event_category': 'navigation',
+          'event_label': 'cta_devis_gratuit'
+        });
+      }
+    });
+  });
+
 });
