@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://diagnostics-nice.fr/sitemap.xml

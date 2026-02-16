@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(pkill:*)",
+      "Bash(for f in *.html)",
+      "Bash(do sed -i '' 's|<p><a href=\"\"tel:+33493XXXXXX\"\">04 93 XX XX XX</a></p>|<!-- TODO: ajouter le vrai numéro de téléphone -->|g' \"$f\")",
+      "Bash(done)",
+      "Bash(do sed -i '' 's|<a href=\"\"tel:+33493XXXXXX\"\">04 93 XX XX XX</a>|<span class=\"\"phone-placeholder\"\" style=\"\"display:none\"\">Téléphone à venir</span>|g' \"$f\")",
+      "Bash(do sed -i '' 's|<a href=\"\"tel:+33493XXXXXX\"\"><strong>04 93 XX XX XX</strong></a>|<span class=\"\"phone-placeholder\"\" style=\"\"display:none\"\">Téléphone à venir</span>|g' \"$f\")",
+      "Bash(lsof:*)",
+      "Bash(curl:*)",
+      "Bash(git -C /Users/anthony/Diag06 status)",
+      "Bash(git -C /Users/anthony/Diag06 init)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: diagnostics-nice.fr static site\n\n19 HTML pages + CSS + JS for real estate diagnostics lead generation in Nice \\(06\\).\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")"
+    ]
+  }
+}
