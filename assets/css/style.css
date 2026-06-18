@@ -415,6 +415,15 @@ p { margin-bottom: 1rem; }
   line-height: 1.7;
   opacity: 1;
 }
+.hero .hero-answer {
+  font-size: .98rem;
+  color: rgba(255,255,255,.82);
+  max-width: 720px;
+  line-height: 1.65;
+  margin: -0.75rem 0 1.75rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--orange);
+}
 
 @media (min-width: 768px) {
   .hero { padding: 5.5rem 0; }
